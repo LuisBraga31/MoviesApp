@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#1e1e1e',
+      backgroundColor: '#242A32',
       padding: 25,
     },
     headerText: {
@@ -13,6 +13,12 @@ export const styles = StyleSheet.create({
         color: '#FFF'
     },
     containerInput: {
-        
+        backgroundColor: "#67686D",
+        height: 42,
+        padding: 10,
+        borderRadius: 16,
+        marginTop: 24,
+        marginBottom: 20,
+        opacity: 0.7,
     }
   });
