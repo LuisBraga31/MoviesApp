@@ -1,9 +1,24 @@
-import { Text, View } from "react-native";
+import { Image, Pressable } from "react-native";
+import { styles } from "./styles";
 
-export function CardMovie () {
+interface Movie {
+    id: number;
+    poster_path: string;
+}
+
+interface Props {
+    data: Movie;
+    onPress?: () => void; 
+}
+
+export function CardMovie ({data, ...rest}: Props) {
     return (
-        <View>
-            <Text> Card </Text>
-        </View>
+        <Pressable style={styles.cardMovies} {...rest} >
+            <Image source={ {
+                uri: `https://image.tmdb.org/t/p/w500${data.poster_path}`
+            }}
+                style={styles.cardImage}
+            />
+        </Pressable>
     )
 }
