@@ -22,8 +22,11 @@ export const styles = StyleSheet.create({
         opacity: 0.7,
         alignItems: "center",
         justifyContent: "space-between",
+        flexDirection: "row"
     },
     input: {
-
+      color: "#fff",
+      width: "80%",
+      paddingLeft: 15
     }
   });
