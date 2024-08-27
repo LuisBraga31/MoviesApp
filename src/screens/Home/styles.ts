@@ -20,5 +20,10 @@ export const styles = StyleSheet.create({
         marginTop: 24,
         marginBottom: 20,
         opacity: 0.7,
+        alignItems: "center",
+        justifyContent: "space-between",
+    },
+    input: {
+
     }
   });
