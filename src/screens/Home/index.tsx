@@ -15,10 +15,16 @@ interface Movie {
 export function Home () {
 
     const [discoveyMovies, setDiscoveyMovies] = useState<Movie[]>([]);
+    const [page, setPage] = useState(1);
 
     const loadingData = async () => {
-        const response = await api.get("/movie/popular")
+        const response = await api.get("/movie/popular", {
+            params: {
+                page,
+            },
+        });
         setDiscoveyMovies(response.data.results)
+        setPage(page + 1)
     }
 
     useEffect(() => {
@@ -47,6 +53,8 @@ export function Home () {
                         padding: 35,
                         paddingBottom: 100,
                     }}
+                    onEndReached={() => loadingData()}
+                    onEndReachedThreshold={0.5}
                 />
             </View>
 
