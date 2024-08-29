@@ -40,12 +40,16 @@ export function Home () {
                 query,
             },
         });
-        if(response.data.results.lenght ===  0) {
+        
+        if(response.data.results.length === 0) {
             setNoResult(true);
+            setLoading(false);
+            setSearchResultMovies([]);
         } else {
-            setSearchResultMovies(response.data.results)
+            setNoResult(false);
+            setSearchResultMovies(response.data.results);
+            setLoading(false);
         }
-        setLoading(false);
     }
 
     const handleSearch = (text: string) => {
@@ -77,6 +81,13 @@ export function Home () {
                     />
                     <MagnifyingGlass color="#fff" size={25} weight="light"/>
                 </View>
+
+                {noResult && (
+                    <Text style={styles.noResult}> 
+                        Nenhum resultado encontrado para {search} 
+                    </Text>
+                )}
+
             </View>
 
             <View>
