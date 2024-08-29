@@ -57,6 +57,7 @@ export function Home () {
         if(text.length > 2) {
             searchMovies(text);
         } else {
+            setNoResult(false);
             setSearchResultMovies([]);
         }
     }
