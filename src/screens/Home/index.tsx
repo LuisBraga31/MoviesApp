@@ -66,7 +66,7 @@ export function Home () {
     const navigation = useNavigation();
 
     const renderMovieItem = ({item} : {item: Movie}) => (
-        <CardMovie data={item} onPress={() => navigation.navigate("Details", {movieID: item.id})}/>
+        <CardMovie data={item} onPress={() => navigation.navigate("Details", {movieId: item.id})}/>
     )
 
     useEffect(() => {
